@@ -1,0 +1,6 @@
+#!/bin/bash
+	
+subtitler > /dev/null && echo Found subtitler || npm i -g subtitler
+
+# Chang --lang argument to any language of choice
+find "$PWD" -type f -execdir subtitler --lang heb {} --download -n 2 --retries 2  \;
